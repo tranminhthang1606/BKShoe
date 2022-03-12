@@ -1,0 +1,149 @@
+
+.activate{
+    display: block !important;
+  }
+  
+.account {
+  position: fixed;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 400px;
+  height: 500px;
+  display: none;
+  left: 37%;
+  top: 100px;
+  flex-direction: column;
+ 
+  @include maxscreen {
+    left: 45%;
+  }
+
+  
+
+  .back {
+    color: red;
+    position: absolute;
+    bottom: 30px;
+    left: 165px;
+    cursor: pointer;
+    @include mobile {
+      left: 110px;
+    }
+  }
+  overflow: hidden;
+  @include mobile {
+  
+    left: 0;
+    top: 40px;
+    width: 300px;
+    height: 400px;
+  }
+
+  .changetab {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100px;
+    color: $txt-second-color;
+    @include mobile {
+      height: 60px;
+    }
+    h3 {
+      cursor: pointer;
+    }
+    .current {
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        transition: width 0.5s ease;
+        height: 2px;
+        background-color: $main-color;
+      }
+
+      &.current {
+        font-weight: 600;
+        color: $main-color;
+      }
+      &.current::after,
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+
+  .form {
+    display: flex;
+    justify-content: center;
+    width: 800px;
+    transition: 0.5s;
+
+    .current {
+      transition: 0.5s;
+      transform: translateX(-375px);
+    }
+    .prev {
+      transition: 0.5s;
+      transform: translateX(0px);
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      width: 370px;
+      padding-right: 75px;
+
+      @include mobile {
+        padding-right: 85px;
+      }
+      input {
+        margin: 20px 0;
+        padding: 10px;
+
+        @include mobile {
+          margin-right: 50px;
+        }
+      }
+
+      .login-outsite{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: 25px;
+        
+        margin: 10px 0;
+        @include mobile{
+          margin-right: 40px;
+        }
+        p{
+          color: $main-color;
+        }
+        div{
+          cursor: pointer;
+          margin: 10px 0;
+        }
+      }
+
+      .registerButton {
+        padding: 5px 30px;
+        margin-top: 10px;
+        background-color: $main-color;
+        color: white;
+        font-weight: 700;
+        font-size: 18px;
+        border-radius: 5px;
+        border: none;
+        @include mobile {
+          width: 200px;
+          margin-left: 10px;
+          transform: translateY(-20px);
+          
+        }
+      }
+    }
+  }
+}

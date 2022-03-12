@@ -1,0 +1,248 @@
+.header {
+  background-color: $main-bg;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  height: $header-height;
+  transition: height 0.3s ease;
+
+  @include tablet {
+    height: $header-tablet-height;
+    box-shadow: $box-shadow;
+  }
+
+  @include mobile {
+    height: $header-mobile-height;
+  }
+
+  .container {
+    height: 100%;
+  }
+
+  &.shrink {
+    height: $header-shrink-height;
+    box-shadow: $box-shadow;
+    z-index: 100;
+
+    @include mobile {
+      height: $header-mobile-height;
+    }
+  }
+
+  &__logo {
+    @include flex(center, center);
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+
+    img {
+      @include mobile {
+        height: 60px;
+      }
+      height: 100px;
+    }
+  }
+
+  &__menu {
+    @include flex(center, space-between);
+    height: 100%;
+    font-size: 1.5rem;
+
+    &__mobile-toggle {
+      z-index: 10;
+    }
+
+    &__item ~ &__item {
+      margin-left: 39px;
+
+      @include tablet {
+        margin-left: 20px;
+      }
+
+      @include mobile {
+        margin-left: 10px;
+      }
+    }
+
+    &__item {
+      padding: 5px 0;
+
+      position: relative;
+      font-size: 1.5rem;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        transition: width 0.5s ease;
+        height: 2px;
+        background-color: $main-color;
+      }
+
+      &.active {
+        font-weight: 600;
+        color: $main-color;
+      }
+      &.active::after,
+      &:hover::after {
+        width: 100%;
+      }
+    }
+
+    &__item:hover {
+      color: $main-color;
+    }
+
+    &__left,
+    &__right {
+      @include flex(center, center);
+      height: 100%;
+    }
+
+    .unactive {
+      display: none;
+    }
+
+    &__right {
+      font-size: 2.25rem;
+
+      &__item {
+        @include flex(center, center);
+        cursor: pointer;
+
+        @include tablet {
+          margin-left: 10px;
+        }
+      }
+
+      @include mobile {
+        font-size: 1.5rem;
+      }
+    }
+
+    .account-hide {
+      display: none;
+    }
+
+    .account-show {
+      
+
+      @include tablet {
+        bottom: -80px;
+        right: -5px;
+      }
+      background-color: $main-bg;
+      border: 2px solid $main-color;
+      padding: 10px;
+      font-size: 16px;
+      position: absolute;
+      bottom: -60px;
+      right: 10px;
+      border-radius: 10px;
+      text-align: center;
+      p {
+        margin: 10px 0;
+        cursor: pointer;
+        transition: 0.5s;
+        &:hover {
+          color: $txt-second-color;
+        }
+      }
+      span {
+        color: $main-color;
+        font-weight: 700;
+      }
+    }
+
+    &__left {
+      &__close {
+        display: none;
+      }
+
+      @include tablet {
+        flex-direction: column;
+        background-color: $main-bg;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        justify-content: flex-start;
+        padding-top: 30px;
+        transform: translateX(-100%);
+        transition: transform 0.5s ease;
+
+        &.active {
+          transform: translateX(0);
+        }
+
+        &__item ~ &__item {
+          margin-left: unset;
+          margin-top: 20px;
+        }
+
+        &__close {
+          display: block;
+          position: absolute;
+          left: 20px;
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    &__mobile-toggle {
+      display: none;
+
+      @include tablet {
+        display: block;
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+.Notigroup {
+  
+  cursor: default ;
+  &:hover .notification {
+    display: block;
+  }
+
+  .notification {
+    
+    width: 250px;
+    font-size: 16px;
+    position: absolute;
+    max-height: 300px;
+    display: none;
+    
+    top: 30px;
+    left: -60px;
+
+    background-color: $main-color;
+    border-radius: 10px;
+    box-shadow: $box-shadow;
+    overflow: auto;
+    z-index: 1000;
+
+    div {
+      margin: 20px 0;
+      padding: 5px;
+    }
+
+    span {
+      color: white;
+    }
+    p {
+      color: white;
+    }
+    img {
+      border-radius: 50%;
+      width: 40px;
+      margin: 0 5px;
+    }
+  }
+}

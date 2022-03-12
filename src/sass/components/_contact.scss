@@ -1,0 +1,144 @@
+.contact-container-full {
+  padding: 100px 0 0px 0;
+  .contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px;
+    @include mobile{
+        flex-direction: column;
+    }
+
+    .contact-details {
+      width: 40%;
+      @include mobile{
+          width: 100%;
+      }
+      span {
+        font-size: 16px;
+      }
+      h2 {
+        font-size: 30px;
+        line-height: 35px;
+        padding: 20px 0;
+      }
+      h3 {
+        font-size: 18px;
+        padding-bottom: 15px;
+      }
+      li {
+        list-style: none;
+        display: flex;
+        padding: 10px 0;
+        i {
+          font-size: 14px;
+          padding-right: 22px;
+        }
+        p {
+          margin: 0;
+          font-size: 16px;
+          color: $txt-second-color;
+        }
+      }
+    }
+
+    .contact-map {
+      width: 55%;
+      height: 400px;
+      @include mobile{
+          width: 100%;
+      }
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .contact-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 1px solid #e1e1e1;
+    padding: 80px;
+    margin: 30px;
+    @include mobile{
+          display: flex;
+          flex-direction: column;
+          margin: 10px ;
+          padding: 10px;
+      }
+
+    form {
+      width: 65%;
+     @include mobile{
+         width: 100%;
+     }
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      
+      span {
+        font-size: 16px;
+        color: $txt-second-color;
+      }
+      h2 {
+        font-size: 30px;
+        line-height: 35px;
+        padding: 20px 0;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 12px 15px;
+        outline: none;
+        margin-bottom: 20px;
+        border: 1px solid $txt-second-color;
+      }
+      .normal {
+        padding: 5px 100px;
+        background-color: $main-color;
+        color: $txt-white;
+        font-size: 20px;
+        font-weight: 700;
+        border: none;
+      }
+    }
+
+    .contact-people {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      
+
+      .guest-box {
+        padding: 15px 0;
+        display: flex;
+        div {
+          margin: 0 15px;
+        }
+
+        img {
+          width: 65px;
+          height: 65px;
+          object-fit: contain;
+          border-radius: 50%;
+          border: 2px solid $main-color;
+        }
+        h3 {
+          color: $txt-second-color;
+          padding-bottom: 15px;
+        }
+        span {
+          font-size: 16px;
+          color: $txt-second-color;
+        }
+        p {
+          margin: 0;
+          font-size: 16px;
+          color: $txt-second-color;
+          padding: 15px 0;
+        }
+      }
+    }
+  }
+}

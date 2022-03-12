@@ -1,0 +1,16 @@
+.scroll-to-top {
+  position: fixed;
+  width: 100%;
+  right: -90%;
+  bottom: 100px;
+  height: 20px;
+  font-size: 5rem;
+  z-index: 1;
+  cursor: pointer;
+  color: $main-color;
+  @include mobile{
+      right: -85%;
+      font-size: 4rem;
+      bottom: 70px;
+  }
+}
